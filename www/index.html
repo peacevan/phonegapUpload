@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+  <!--
+        Customize this policy to fit your own app's needs. For more guidance, see:
+            https://github.com/apache/cordova-plugin-whitelist/blob/master/README.md#content-security-policy
+        Some notes:
+            * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
+            * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
+            * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
+            * Enable inline JS: add 'unsafe-inline' to default-src
+		     1- <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content: blob: cdvphotolibrary:;">
+             2-  <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content blob: cdvphotolibrary:;"
+ 
+        -->
+      <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content blob: cdvphotolibrary:;"
+       
+	<meta name="format-detection" content="telephone=no">
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+    <link rel="stylesheet" type="text/css" href="lib/photoswipe/dist/photoswipe.css">
+    <link rel="stylesheet" type="text/css" href="lib/photoswipe/dist/default-skin/default-skin.css">
+   
+
+  <title>Backup Fotos</title>
+</head>
+
+<body>
+  
+  
+  
+  <script type="text/javascript" src="cordova.js"></script>
+  <script type="text/javascript" src="lib/photoswipe/dist/photoswipe.min.js"></script>
+  <script type="text/javascript" src="lib/photoswipe/dist/photoswipe-ui-default.min.js"></script>
+  <script type='text/javascript' src='js/jquery-3.0.0.js' ></script>
+  <script type="text/javascript" src="js/index.js"></script>
+  
+  
+     <div style="width:100%; text-align:center; padding:10px;" id="app">
+			 <h1>Back-up Fotos</h1>
+		 
+			 <div style="margin:0 auto; width:30%!important;text-align: center;">
+			<img src="img/cam2.jpg" id='img' style="width: 100px; height: 100px;">
+        </div>
+		<br/>
+        <div style="width:100%; text-align:center; padding:10px;">
+            <button id='but_take' onclick='app.but_take()'>tirar foto e faz upload</button>
+            <button id='but_select' onclick='app.but_select()'>selecionar foto da galeria e fazer upload</button>
+			<button id='but_all'  onclick='app.loadPhotos()'>upload Todas as fodo da galeria.</button>
+           
+        </div>
+			 
+			 <div id='uploadsucess'></div>
+   </div>
+
+</body>
+
+</html>
